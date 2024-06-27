@@ -1,0 +1,390 @@
+\documentclass[reqno,a4paper,12pt]{amsart}%{article}%
+\usepackage{amssymb,amsmath,amscd,amstext,amsthm,amsfonts}
+\usepackage[]{graphicx}
+\usepackage{epstopdf}
+\usepackage{setspace} 
+\usepackage{subfig}
+\usepackage{color}
+\usepackage[mathscr]{eucal}
+\usepackage[draft]{changes}
+%\doublespacing
+\usepackage[ansinew]{inputenc} 
+\usepackage{hyperref}
+\usepackage{color}
+%\usepackage{standalone}
+\usepackage{hyperref}
+\usepackage{subfiles}
+
+\usepackage{quoting}
+
+%\usepackage{mathtools}
+\usepackage{nicefrac}
+%\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{enumerate}
+\usepackage{bbm}
+
+
+%\usepackage[pagebackref]{hyperref}
+%\renewcommand*{\backref}[1]{Cited at page [#1]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\addtolength{\evensidemargin}{-15mm}
+%\addtolength{\oddsidemargin}{-15mm}
+%\addtolength{\textwidth}{30mm}
+%\addtolength{\textheight}{20mm}
+%\addtolength{\topmargin}{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\numberwithin{equation}{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{thm}{Theorem}[section]
+%\newtheorem{lem}[thm]{Lemma}%[section]
+%\newtheorem{prop}[thm]{Proposition}%[section]
+%\newtheorem{cor}[thm]{Corollary}%[section]
+%%\newtheorem{Jac}{Jacobi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{estimate}[theorem]{Estimate}
+%\newtheorem{assumption}[theorem]{Assumption}
+%{\theoremstyle{definition}%{plain}
+	%{%\theorembodyfont{\normalfont\rmfamily}
+		%%\newthbeorem{definition}[theorem]{Definition}
+		%\newtheorem{remark}[theorem]{Remark}
+		%\newtheorem{example}[theorem]{Example}
+		%\newtheorem{exercise}[section]{Exercise}
+		%\newtheorem{defn}[theorem]{Definition}
+		%}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}{Example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newcommand{\cal}{\mathcal}
+
+%\newcommand{\A}{{\cal A}}
+%\newcommand{\BB}{{\cal B}}
+%\newcommand{\CC}{{\cal C}}
+%\newcommand{\CCC}{{\cal C}}
+%\newcommand{\DD}{{\cal D}}
+%\newcommand{\EE}{{\cal E}}
+%\newcommand{\FF}{{\cal F}}
+%\newcommand{\GG}{{\cal G}}
+%\newcommand{\HH}{{\cal H}}
+%\newcommand{\II}{{\cal I}}
+%\newcommand{\JJ}{{\cal J}}
+%\newcommand{\KK}{{\cal K}}
+%\newcommand{\LL}{{\cal L}}
+%\newcommand{\MM}{{\cal M}}
+%\newcommand{\NN}{{\cal N}}
+%\newcommand{\OO}{{\cal O}}
+%\newcommand{\PP}{{\cal P}}
+%\newcommand{\QQ}{{\cal Q}}
+%\newcommand{\QQQ}{{\cal Q}}
+%\newcommand{\RR}{{\cal R}}
+%\newcommand{\SSS}{{\cal S}}
+%\newcommand{\TT}{{\cal T}}
+%\newcommand{\TTT}{{\cal T}}
+%\newcommand{\UU}{{\cal U}}
+%\newcommand{\VV}{{\cal V}}
+%\newcommand{\WW}{{\cal W}}
+%\newcommand{\XX}{{\cal X}}
+%\newcommand{\YY}{{\cal Y}}
+%\newcommand{\ZZ}{{\cal Z}}
+%\newcommand{\SRB}{\mathscr{E}}
+%\newcommand{\Mix}{{\rm Mix}}
+
+\newcommand{\fa}{{\mathfrak a}}
+\newcommand{\fg}{{\mathfrak g}}
+\newcommand{\fu}{{\mathfrak u}}
+\newcommand{\fD}{{\mathfrak D}}
+\newcommand{\fF}{{\mathfrak F}}
+\newcommand{\fG}{{\mathfrak G}}
+\newcommand{\fN}{{\mathfrak N}}
+\newcommand{\fR}{{\mathfrak R}}
+\newcommand{\fU}{{\mathfrak U}}
+\newcommand{\fX}{{\mathfrak X}}
+
+
+\newcommand{\Aa}{{\mathbb{A}}}
+\newcommand{\Bb}{{\mathbb{B}}}
+\newcommand{\Cc}{{\mathbb{C}}}
+\newcommand{\Dd}{{\mathbb{D}}}
+\newcommand{\Ee}{{\mathbb{E}}}
+\newcommand{\Ff}{{\mathbb{F}}}
+\newcommand{\Gg}{{\mathbb{G}}}
+\newcommand{\Hh}{{\mathbb{H}}}
+\newcommand{\Ii}{{\mathbb{I}}}
+\newcommand{\Jj}{{\mathbb{J}}}
+\newcommand{\Kk}{{\mathbb{K}}}
+\newcommand{\Ll}{{\mathbb{L}}}
+\newcommand{\Mm}{{\mathbb{M}}}
+\newcommand{\Nn}{{\mathbb{N}}}
+\newcommand{\Oo}{{\mathbb{O}}}
+\newcommand{\Pp}{{\mathbb{P}}}
+\newcommand{\Qq}{{\mathbb{Q}}}
+\newcommand{\Rr}{{\mathbb{R}}}
+\newcommand{\Ss}{{\mathbb{S}}}
+\newcommand{\Tt}{{\mathbb{T}}}
+\newcommand{\Uu}{{\mathbb{U}}}
+\newcommand{\Vv}{{\mathbb{V}}}
+\newcommand{\Ww}{{\mathbb{W}}}
+\newcommand{\Xx}{{\mathbb{X}}}
+\newcommand{\Yy}{{\mathbb{Y}}}
+\newcommand{\Zz}{{\mathbb{Z}}}
+
+
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+
+\DeclareMathOperator{\sint}{int}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\H{{\mathfrak H}}
+\def\Iso{\operatorname{Iso}}
+\def\e{\mathrm{e}}
+%\def\i{\mathrm{i}}
+\def\cc{\operatorname{cc}}
+\def\diag{\operatorname{diag}}
+\def\dist{\operatorname{dist}}
+\def\error{\operatorname{error}}
+%\def\id{\operatorname{id}}
+\def\j{\operatorname{j{}}}
+\def\C{\operatorname{C{}}}
+\def\G{\operatorname{G{}}}
+\def\L{\operatorname{L{}}}
+\def\M{\operatorname{M{}}}
+\def\Mat{\operatorname{Mat}}
+\def\GL{\operatorname{GL}}
+\def\Op{\operatorname{Op}}
+\def\sOp{\widetilde{\operatorname{Op}}}
+\def\PGL{\operatorname{PGL}}
+\def\Res{\operatorname{Res}}
+\def\S{\operatorname{S{}}}
+\def\Sp{\operatorname{Sp}}
+\def\Sw{{\mathcal S}}
+\def\SL{\operatorname{SL}}
+\def\sl{\operatorname{sl}}
+\def\SO{\operatorname{SO}}
+\def\PSL{\operatorname{PSL}}
+\def\O{\operatorname{O{}}}
+\def\T{\operatorname{T{}}}
+\def\tr{\operatorname{tr}}
+\def\sgn{\operatorname{sgn}}
+\def\supp{\operatorname{supp}}
+\def\meas{\operatorname{meas}}
+\def\Leb{\operatorname{Leb}}
+\def\Var{\operatorname{Var}}
+\def\Vol{\operatorname{Vol}}
+\def\Area{\operatorname{Area}}
+\def\ord{\operatorname{ord}}
+\def\Prob{\operatorname{Prob}}
+\def\Ad{\operatorname{Ad}}
+\def\ad{\operatorname{ad}}
+
+\def\Per{\operatorname{Per}}
+
+\def\GamG{\Gamma\backslash G}
+\def\SLZ{\SL(2,\Zz)}
+\def\SLR{\SL_2(\Rr)}
+\def\SLC{\SL_2(\Cc)}
+\def\SOR{\SO(2)}
+
+\def\Re{\operatorname{Re}}
+\def\Im{\operatorname{Im}}
+
+%%%%% Pedro's Macro
+\newcommand{\Mod}[1]{\left\vert{#1}\right\vert}
+\newcommand{\dem}{ \par\medbreak\noindent{\bf
+		Proof. }\enspace} 
+\newcommand{\cqd}{\hfill
+	$\sqcup\!\!\!\!\sqcap\bigskip$}
+\newcommand{\nrm}[1]{\left\|#1\right\|}
+
+
+%\def\trans{\,^\top\!}
+
+%\DeclareMathOperator{\GL}{GL}
+%\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\vspan}{span}
+
+\newcommand {\CC}{\mathbb{C}}
+\newcommand {\RR}{\mathbb{R}}
+\newcommand {\FF}{\mathbb{F}}
+\newcommand {\NN}{\mathbb{N}}
+\newcommand {\QQ}{\mathbb{Q}}
+\newcommand {\EE}{\mathbb{E}}
+\newcommand {\PP}{\mathbb{P}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand{\abs}[1]{\left| #1\right|}
+%\newcommand{\norm}[1]{\left\| #1\right\|}
+%\newcommand{\pde}[2]{\frac{\partial #1}{\partial #2}}
+
+%\newcommand{\spec}[1]{\operatorname{spec}\left( #1\right)}
+%\newcommand{\tr} {\operatorname{tr}}
+%\newcommand{\diag} {\operatorname{diag}}
+\newcommand{\trans} {\,^\top\!}
+\newcommand{\conj} {\overline}
+\newcommand{\para} {\parallel}
+
+\newcommand{\id}  {\operatorname{id}}
+\newcommand{\im}  {\operatorname{Im}}
+\newcommand{\re}  {\operatorname{Re}}
+%\newcommand{\up}  {\uparrow}
+%\newcommand{\down}{\downarrow}
+%\newcommand{\sgn} {\operatorname{sgn}}
+%\newcommand{\const}{\operatorname{cst}}
+
+\newcommand{\Int} {\operatorname{int}}
+%\newcommand{\Ext} {\operatorname{Ext}}
+%\newcommand{\Span}{\operatorname{span}}
+%\newcommand{\perm}{\operatorname{Perm}}
+%\newcommand{\std} {\operatorname{std}}
+%\newcommand{\fix} {\operatorname{Fix}}
+%\newcommand{\cl}  {\operatorname{ cl}}
+
+\newcommand{\rot}{\operatorname{rot}}
+\newcommand{\Homeo}{\operatorname{Homeo}} %{\mbox{\rm Homeo\,}}
+\newcommand{\Diff} {\operatorname{Diff}}  %{\mbox{\rm Diff\,}}
+\newcommand{\vf}   {\operatorname{Vect}} % {\XX}
+%\newcommand{\diffo}{\text{Diff}_0\,}
+%\newcommand{\vol}  {\operatorname{Diff}_{\text{vol}}\,}
+%\newcommand{\Vol}  {\operatorname{vol}}
+\newcommand{\Symp} {\operatorname{Symp}}
+%\newcommand{\sympo}{\mbox{\rm Symp_0\,}} % {\text{Symp}_0\,}
+\newcommand{\Ham}  {\operatorname{Ham}}
+\newcommand{\Sym} {\operatorname{Sym}}
+\newcommand{\Skew} {\operatorname{Skew}}
+%\newcommand{\Sp}   {\operatorname{Sp}}
+%\newcommand{\lie}  {\mbox{\rm Lie\,}}
+
+%\newcommand{\GL}   {\operatorname{GL}}
+%\newcommand{\SL}   {\operatorname{SL}}
+%%\newcommand{\SU}   {\operatorname{SU}}
+%\newcommand{\SO}   {\operatorname{SO}}
+
+\newcommand{\DC}   {\operatorname{DC}}
+\newcommand{\LC}   {\operatorname{LC}}
+
+\newcommand{\te}[1]{\quad\text{#1}\quad}
+%\newcommand{\comment}[1]{}
+
+\newcommand{\Teich}{\mathscr{T}}
+\newcommand{\TTeich}{{\rm T}\mathscr{T}}
+\newcommand{\Bundle}{\mathscr{B}}
+\newcommand{\Afrk}{\mathfrak{A}}
+\newcommand{\Bfrk}{\mathfrak{B}}
+\newcommand{\Cfrk}{\mathfrak{C}}
+\newcommand{\Dfrk}{\mathfrak{D}}
+\newcommand{\Ffrk}{\mathfrak{F}}
+\newcommand{\Hfrk}{\mathfrak{H}}
+\newcommand{\Lfrk}{\mathfrak{L}}
+\newcommand{\Ofrk}{\mathfrak{O}}
+\newcommand{\Qfrk}{\mathfrak{Q}}
+\newcommand{\Rfrk}{\mathfrak{R}}
+\newcommand{\Tfrk}{\mathfrak{T}}
+\newcommand{\Ufrk}{\mathfrak{U}}
+\newcommand{\Ascr}{\mathscr{A}}
+\newcommand{\Bscr}{\mathscr{B}}
+\newcommand{\Cscr}{\mathscr{C}}
+\newcommand{\Escr}{\mathscr{E}}
+\newcommand{\Zscr}{\mathscr{Z}}
+\newcommand{\Gscr}{\mathscr{G}}
+\newcommand{\Nscr}{\mathscr{N}}
+\newcommand{\Mscr}{\mathscr{M}}
+\newcommand{\Kscr}{\mathscr{K}}
+\newcommand{\Iscr}{\mathscr{I}}
+\newcommand{\Jscr}{\mathscr{J}}
+\newcommand{\Dscr}{\mathscr{D}}
+\newcommand{\Fscr}{\mathscr{F}}
+\newcommand{\Hscr}{\mathscr{H}}
+\newcommand{\Lscr}{\mathscr{L}}
+\newcommand{\Oscr}{\mathscr{O}}
+\newcommand{\Qscr}{\mathscr{Q}}
+\newcommand{\Pscr}{\mathscr{P}}
+\newcommand{\Rscr}{\mathscr{R}}
+\newcommand{\Sscr}{\mathscr{S}}
+\newcommand{\Tscr}{\mathscr{T}}
+\newcommand{\Uscr}{\mathscr{U}}
+\newcommand{\Vscr}{\mathscr{V}}
+\newcommand{\Wscr}{\mathscr{W}}
+\newcommand{\Xscr}{\mathscr{X}}
+\newcommand{\Grp}{{\rm G}}
+\newcommand{\Grass}{\mathscr{G}}
+\newcommand{\Sperm}{{\rm S}}
+\newcommand{\SJ}{{\rm S}^{sp}}
+\newcommand{\Flag}{\Fscr}
+\newcommand{\Fliso}{\Fscr^{sp}}
+\newcommand{\Grptil}{\widetilde{\rm G}}
+\newcommand{\Vfrk}{\mathfrak{V}}
+\newcommand{\Xfrk}{\mathfrak{X}}
+\newcommand{\Gfrk}{\mathfrak{G}}
+\newcommand{\Pfrk}{\mathfrak{P}}
+\newcommand{\Mfrk}{\mathfrak{M}}
+\newcommand{\Ical}{\mathcal{I}}
+\newcommand{\Grad}{{\rm Grad}}
+\newcommand{\Sone}{[0,1]}
+
+\newcommand{\emb}[1]{\BB^{#1}}
+
+\newcommand{\ff}{\mathbb{II}}
+
+
+
+
+\begin{document}
+	\title{-- Lecture  0 -- \\
+	\Large A Sickness Unto Death \\
+	\small or, An Enquiry into the Theory of Measure as it Concerns those Processes of a Stochastic Kind
+	}
+	\author{Underground Research Division
+	\\ 
+	DO NOT DISTRIBUTE THIS DOCUMENT WITHOUT PERMISSION }
+	\date{\today}
+	\maketitle
+	
+	\tableofcontents
+	
+	\section*{Nihil -- $\emptyset$}
+	
+\begin{quoting}
+``It is clear that I can only deliver to you, to each of you, what you are already on the verge of absorbing."  
+\end{quoting}
+
+
+
+\par\noindent\rule{\textwidth}{0.1pt}
+	
+	
+\section{The Doctrine of Chances}
+
+The general problem of measure is our starting point. Given $A \subseteq X$ we want to be able to assign a quantity $m(A)$ to this set, which can be said, in some sense, to be its ``measure". Take, for example, $X=\RR$  and $A = [a,b]$, for which we can set $m (A)  = b-a$. Some questions immediately arise: what properties must $m$ obey? and what is its proper domain, i.e. which sets can be said to be \textit{measurable}? The answer to this last question requires the introduction of the elementary structure of measure theory-- the $\sigma$-algebra.
+\begin{definition}
+	A $\sigma$-algebra over a set $X$ is a set $\mathcal{F} \subseteq \mathcal{P}(X)$ satisfying
+	\begin{enumerate}
+		\item $\emptyset \in \mathcal{F}$,
+		\item $A \in \mathcal{F} \implies X \setminus A \in \mathcal{F}$,
+		\item If $A_1, A_2, \ldots \in \mathcal{F}$ then
+		\[
+		\bigcup_{i \in \NN} A_i \in \mathcal{F}.
+		\]
+	\end{enumerate}
+\end{definition}
+	
+\end{document}
