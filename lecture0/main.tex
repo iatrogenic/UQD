@@ -349,29 +349,92 @@
 
 
 \begin{document}
-	\title{-- Lecture  0 -- \\
+	\title[A Sickness Unto Death]{-- Lecture  0 -- \\
 	\Large A Sickness Unto Death \\
 	\small or, An Enquiry into the Theory of Measure as it Concerns those Processes of a Stochastic Kind
 	}
-	\author{Underground Research Division
+	\author[Underground Research Division]{Underground Research Division
 	\\ 
 	DO NOT DISTRIBUTE THIS DOCUMENT WITHOUT PERMISSION }
 	\date{\today}
 	\maketitle
 	
-	\tableofcontents
+	\begin{center}
+		\includegraphics[width=5cm, height=5cm]{urd.jpg}
+	 \end{center}
 	
-	\section*{Nihil -- $\emptyset$}
+\pagebreak
+
+\section*{Preface}
+
+\textit{This preface is temporary. I just want to quickly sketch a road man to guide our study.}
+
+\smallbreak
+
+A good end goal, for now, would be to prove \textbf{Girsanov's Theorem}. It is an important result and will require a lot of the fundamentals:
+
+\smallbreak
+
+\begin{enumerate}
+	\item Probability spaces and Information
+	\begin{itemize}
+		\item $\sigma$-algebras
+		\begin{itemize}
+			\item Filtrations
+		\end{itemize}
+		\item Independence and Conditioning
+		\item Adapted Stochastic Processes
+		\begin{itemize}
+			\item Martigales
+			\item Markov Processes
+		\end{itemize}
+	\end{itemize}
+	\item Brownian motion
+	\begin{itemize}
+		\item Random Walks
+		\item Martingales and Symmetric Random Walks
+		\item Distribution of Brownian Motion
+		\item Filtrations for Brownian Motion
+		\item Martingales and Brownian Motion
+	\end{itemize}
+	\item It\^{o} calculus
+	\begin{itemize}
+		\item It\^{o} integral (Simple case)
+		\begin{itemize}
+			\item Definition, construction and properties
+		\end{itemize}
+		\item It\^{o} integral (General case)
+		\item It\^{o}-Doeblin formula for Brownian motion
+		\item Levy's Theorem
+	\end{itemize}
+	\item Black-Scholes-Merton Equation 
+	\item Radon-Nikodym 
+	\begin{itemize}
+		\item Radon-Nikodym Theorem
+		\item Radon-Nikodym derivatives
+	\end{itemize}
+	\item Risk-Neutral Measure
+	\begin{itemize}
+		\item Girsanov's Theorem
+		\item Novikov's condition
+		\item Risk-neutral pricing in the Black-Scholes model
+	\end{itemize}
+\end{enumerate}
+	 
+\vfil
+\pagebreak	
+
+\tableofcontents
+	
+\section*{Nihil -- $\emptyset$}
 	
 \begin{quoting}
 ``It is clear that I can only deliver to you, to each of you, what you are already on the verge of absorbing."  
 \end{quoting}
 
 
-
 \par\noindent\rule{\textwidth}{0.1pt}
-	
-	
+		
 \section{The Doctrine of Chances}
 
 The general problem of measure is our starting point. Given $A \subseteq X$ we want to be able to assign a quantity $m(A)$ to this set, which can be said, in some sense, to be its ``measure". Take, for example, $X=\RR$  and $A = [a,b]$, for which we can set $m (A)  = b-a$. Some questions immediately arise: what properties must $m$ obey? and what is its proper domain, i.e. which sets can be said to be \textit{measurable}? The answer to this last question requires the introduction of the elementary structure of measure theory-- the $\sigma$-algebra.
@@ -387,4 +450,8 @@ The general problem of measure is our starting point. Given $A \subseteq X$ we w
 	\end{enumerate}
 \end{definition}
 	
+ 
+
+
+
 \end{document}
