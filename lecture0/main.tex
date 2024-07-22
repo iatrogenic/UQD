@@ -365,7 +365,8 @@
 	
 \pagebreak
 
-\section*{Preface}
+\iffalse  
+  \section*{Preface}
 
 \textit{This preface is temporary. I just want to quickly sketch a road man to guide our study.}
 
@@ -377,72 +378,76 @@ A good end goal, for now, would be to prove \textbf{Girsanov's Theorem}. It is a
 
 \begin{enumerate}
 	\item Probability spaces and Information
-	\begin{itemize}
+	\begin{enumerate}
 		\item $\sigma$-algebras
-		\begin{itemize}
+		\begin{enumerate}
 			\item Filtrations
-		\end{itemize}
+		\end{enumerate}
 		\item Independence and Conditioning
 		\item Adapted Stochastic Processes
-		\begin{itemize}
+		\begin{enumerate}
 			\item Martigales
 			\item Markov Processes
-		\end{itemize}
-	\end{itemize}
+		\end{enumerate}
+	\end{enumerate}
 	\item Brownian motion
-	\begin{itemize}
+	\begin{enumerate}
 		\item Random Walks
 		\item Martingales and Symmetric Random Walks
 		\item Distribution of Brownian Motion
 		\item Filtrations for Brownian Motion
 		\item Martingales and Brownian Motion
-	\end{itemize}
+	\end{enumerate}
 	\item It\^{o} calculus
-	\begin{itemize}
+	\begin{enumerate}
 		\item It\^{o} integral (Simple case)
-		\begin{itemize}
+		\begin{enumerate}
 			\item Definition, construction and properties
-		\end{itemize}
+		\end{enumerate}
 		\item It\^{o} integral (General case)
 		\item It\^{o}-Doeblin formula for Brownian motion
 		\item Levy's Theorem
-	\end{itemize}
+	\end{enumerate}
 	\item Black-Scholes-Merton Equation 
 	\item Radon-Nikodym 
-	\begin{itemize}
+	\begin{enumerate}
 		\item Radon-Nikodym Theorem
 		\item Radon-Nikodym derivatives
-	\end{itemize}
+	\end{enumerate}
 	\item Risk-Neutral Measure
-	\begin{itemize}
+	\begin{enumerate}
 		\item Girsanov's Theorem
 		\item Novikov's condition
 		\item Risk-neutral pricing in the Black-Scholes model
-	\end{itemize}
+	\end{enumerate}
 \end{enumerate}
 	 
 \vfil
+\fi
+
+
 \pagebreak	
 
 \tableofcontents
-	
+
 \section*{Nihil -- $\emptyset$}
 	
 \begin{quoting}
 ``It is clear that I can only deliver to you, to each of you, what you are already on the verge of absorbing."  
 \end{quoting}
 
-
-\par\noindent\rule{\textwidth}{0.1pt}
+\begin{center}
+\par\noindent\rule{200pt}{0.1pt}
+\end{center}
 		
-\section{The Doctrine of Chances}
+\section{The Doctrine of Chances} 
 
-The general problem of measure is our starting point. Given $A \subseteq X$ we want to be able to assign a quantity $m(A)$ to this set, which can be said, in some sense, to be its ``measure". Take, for example, $X=\RR$  and $A = [a,b]$, for which we can set $m (A)  = b-a$. Some questions immediately arise: what properties must $m$ obey? and what is its proper domain, i.e. which sets can be said to be \textit{measurable}? The answer to this last question requires the introduction of the elementary structure of measure theory-- the $\sigma$-algebra.
+The general problem of measure is our starting point. Given $A \subseteq \Omega$ we want to be able to assign a quantity $m(A)$ to this set, which can be said, in some sense, to be its ``measure". Take, for example, $X=\RR$  and $A = [a,b]$, for which we can set $m (A)  = b-a$. Some questions immediately arise: what properties must $m$ obey? and what is its proper domain, i.e. which sets can be said to be \textit{measurable}? The answer to this last question requires the introduction of the elementary structure of measure theory-- the $\sigma$-algebra.
 \begin{definition}
-	A $\sigma$-algebra over a set $X$ is a set $\mathcal{F} \subseteq \mathcal{P}(X)$ satisfying
+	A  \textbf{$\sigma$-algebra over a set $\Omega$} is a set $\mathcal{F} \subseteq \mathcal{P}(\Omega)$ satisfying
 	\begin{enumerate}
 		\item $\emptyset \in \mathcal{F}$,
-		\item $A \in \mathcal{F} \implies X \setminus A \in \mathcal{F}$,
+		\item $A \in \mathcal{F} \implies \Omega \setminus A \in \mathcal{F}$,
 		\item If $A_1, A_2, \ldots \in \mathcal{F}$ then
 		\[
 		\bigcup_{i \in \NN} A_i \in \mathcal{F}.
@@ -450,8 +455,406 @@ The general problem of measure is our starting point. Given $A \subseteq X$ we w
 	\end{enumerate}
 \end{definition}
 	
+\begin{definition}
+	Let $\mathcal{F}$ be a $\sigma$-algebra over a set $\Omega$. A \textbf{probability measure} $\Pp$ is a  function $\Pp: \mathcal{P}(\mathcal{F}) \rightarrow [0,1] $ such that:
+\begin{enumerate}
+	\item $\Pp (\Omega) =1,$
+	\item  for disjoint $A_1, A_2,... \in \mathcal{F}:$ $$\Pp \Bigg( \bigcup^{\infty}_{n=1} A_n \Bigg) = \sum^{\infty}_{n=1} \Pp (A_n) $$
+\end{enumerate}
+ The triple $(\Omega, \mathcal{F}, \Pp)$ is called a \textbf{probability space}.
+\end{definition}
+
+\begin{definition}
+	Let $(\Omega, \mathcal{F}, \Pp)$ be a probability space and $A \in \mathcal{F}$. 
+	
+	If $\Pp (A)= 1$ we say that $A$ occurs \textbf{almost surely} or \textbf{almost always}.
+	
+	If $\Pp (A)= 0$ we say that $A$ occurs \textbf{almost never}. 
+\end{definition}
+
+
+
+				
+
+\begin{definition}
+	Let $(\Omega, \mathcal{F}, \Pp)$ be a probability space. A \textbf{random variable} $X$ is function $X: \Omega \rightarrow \Rr $ such that 
+	$$ \{\omega \in \Omega \mid X(\omega) \in B\} \in \mathcal{F},$$ for every Borel subset $B$ or $\Rr.$
+	
+	We will also denote the set $\{\omega \in \Omega \mid X(\omega) \in B\}$ simply by $\{X \in B\}.$
+\end{definition}
+
+\begin{definition}
+ Let $X$ be a random variable on a probability space  $(\Omega, \mathcal{F}, \Pp)$. The
+\textbf{distribution measure of} $X$ is the probability measure $\mu_X$ that assigns to each Borel
+subset $B$ of $\Rr$ the \textbf{mass} $$\mu_X(B) = \Pp (\{X \in B\}).$$.
+\end{definition}
+
+\subsection{Expected Value}
+
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}
+
+\
+
+
+\begin{center}
+
+In data's dark, a guardian sleeps
+
+Expected Value, veiled, mystery deep
+
+Probability's weights, measures guide
+
+Assigning worth, uncertainty's tide
+
+Chancing fate, in shadows cast
+
+Converging sums, destiny forecast
+
+Lo, a shadow of horror is risen 
+
+In Eternity! Unknown, unprolific? 
+
+Self-closd, all-repelling; what Demon 
+
+Hath form'd this abominable void 
+
+This soul-shudd'ring vacuum? 
+
+Some said 
+
+``It is Urizen". But unknown, abstracted 
+
+Brooding secret, the dark power hid.	
+\end{center}
+
+
+\
+
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}
+
+\
+
+Let $(\Omega, \mathcal{F}, \Pp)$ be a probability space with  a random variable $X$. Then  
+$$\Ee X= \sum_{\omega \in \Omega} X(\omega) \Pp (\omega)$$ for the finite case,
+
+$$\Ee X= \sum_{k=1}^\infty X(\omega_k) \Pp (\omega_k),  $$ for the contable case.
+
+The uncontable case is problematic. Consider
+
+$$X^+(\omega)=\max \{X(\omega),0\} \textrm{ and } X^-(\omega)=\max \{-X(\omega),0\} $$
+
+$$\int_\Omega  X^+(\omega) d \Pp (\omega) \textrm{ and} \int_\Omega X^-(\omega) d \Pp (\omega)  $$
+
+and then 
+
+$$ \int_\Omega X(\omega) d \Pp (\omega) = \int_\Omega X^+(\omega) d \Pp (\omega)  -\int_\Omega X^-(\omega) d \Pp (\omega)  $$
+
+ 
+
+\begin{theorem}
+	Let $X$ and $Y$ be a random variables on a probability space $(\Omega, \mathcal{F}, \Pp)$.
+	Then:
+	 \begin{enumerate}
+		\item 	 if $X$ takes a finite amount of values $x_1, x_2,..., x_n,$ then $$\int_\Omega X(\omega)d \Pp (\omega)= \sum_{k=1}^n x_k \Pp (\{ X= x_k \}) $$
+		\item $X^+(\omega)=\max \{X(\omega),0\} < \infty, \ X^-(\omega)=\max \{-X(\omega),0\} < \infty $  $$  \textrm{if and only if } \quad \quad \int_\Omega 	| X(\omega) | d \Pp (\omega)< \infty  $$
+		\item  If $X \leq Y$ almost surely, 
+		$$  \int_\Omega X(\omega) d \Pp (\omega) \leq \int_\Omega Y(\omega) d \Pp (\omega) \quad \quad  \textrm{(if both integrals exist) }  $$ and the equality is realized if $X=Y$ almost surely	
+		\item if $\alpha, \beta \in \Rr$   $$  \int_\Omega (\alpha X(\omega)+ \beta Y(\omega)) d \Pp (\omega)= 	 \alpha\int_\Omega X(\omega) d \Pp (\omega)+ \beta\int_\Omega Y(\omega) d \Pp (\omega)    $$
+	\end{enumerate}
+\end{theorem}
+
+
+
+The \textbf{indicator function} will often be useful: $$ \Ii_A (\omega)= 1, \textrm{ if }  \omega \in A \textrm{ else } \Ii_A (\omega)=0,$$ for any set $A$.
+
+If we want to integrate a ramdom variable $X$ over a subset $A$ of $\Omega$, we may use the \textbf{indicator function} to define 
+
+$$ \int_A X(\omega) d \Pp (\omega) = \int_\Omega \Ii_A X(\omega) d \Pp (\omega) $$
+
+\begin{definition}
+	Let $X$ be a random variable on a probability space $(\Omega, \mathcal{F}, \Pp)$. The \textbf{expected value} of $X$ is 
+	$$\Ee X = \int_\Omega X(\omega) d \Pp (\omega)$$
+\end{definition}
+
+Care must be taken when the integrals diverge.
+
+\begin{theorem}
+	Let $X$ and $Y$ be a random variables on a probability space $(\Omega, \mathcal{F}, \Pp)$.
+	\begin{enumerate}
+		\item 	 if $X$ takes a finite amount of values $x_1, x_2,..., x_n,$ then $$\Ee X= \sum_{k=1}^n x_k \Pp (\{ X= x_k \}) $$
+		\item $X^+(\omega)=\max \{X(\omega),0\} < \infty, \ X^-(\omega)=\max \{-X(\omega),0\} < \infty $  $$  \textrm{if and only if } \quad \quad \Ee| X| < \infty  $$
+		\item  If $X \leq Y$ almost surely, 
+		$$  \Ee X \leq \Ee Y d \Pp (\omega) \quad \quad  \textrm{(if both integrals exist) }  $$ and the equality is realized if $X=Y$ almost surely	
+		\item if $\alpha, \beta \in \Rr$   $$   \Ee(\alpha X+ \beta Y) = 	 \alpha \Ee X + \beta \Ee Y    $$
+		\item (Jensen's inequality) If $\varphi: \Rr \to \Rr$ is a convex and $\Ee |X| < \infty,$ then $$\varphi(\Ee X)\leq \Ee \varphi(X) $$
+	\end{enumerate}
+\end{theorem}
  
 
 
 
-\end{document}
+ 
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}	
+
+\
+
+\begin{center}	
+
+Times on times he divided, \& measur'd 
+
+Space by space in his ninefold darkness 
+
+Unseen, unknown: changes appeard 
+
+In his desolate mountains rifted furious 
+
+By the black winds of perturbation
+
+In realms of measure, sets unfold
+
+Borel's shadow, secrets told
+
+Sigma fields converge to bind
+
+Lebesgue's dream, precision aligned
+
+Cantor's dust, infinite unfold
+
+Measurable paths, stories untold
+
+Open closed, boundaries blur
+
+Topology's dance, precision furor
+
+
+\end{center}
+
+\
+
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}	
+	
+\
+	
+
+\begin{definition}
+	The $\sigma$-algebra of \textbf{Borel subsets of} $\Rr$, denoted by $\mathcal{B}(\Rr)$ is the $\sigma$-algebra generated from the closed real intervals $[a,b].$ \\
+	Informally, this is no more than collection of subsets of $\Rr$ that can be contructed from closed intervals using a countable amount of intersections, unions and complements
+	``Most" real subsets are Borel subsets. It takes a substancial amount of effort to find contra-examples.
+\end{definition}
+
+\begin{definition}
+	The Lebesgue measure on $\Rr$ which we denote by $\mathcal{L},$ maps each $B \in \mathcal{B}(\Rr)$ to $[0, \infty]$ (that is, a non-negative real of $\infty$) such that
+	\begin{enumerate}
+		\item $\mathcal{L}([a,b])= b-a$, when $a\leq b$
+		\item if $B_1, B_2, B_3,...$ is a sequence of disjoint sets in $\mathcal{B}(\Rr),$ then $$\mathcal{L}\Bigg(\bigcup_{n=1}^\infty B_n\Bigg)= \sum_{n=1}^\infty $$
+	\end{enumerate}
+\end{definition}
+
+
+
+
+
+\begin{theorem}
+	Let $f: \Rr \to \Rr $ be a bounded real function, and let $a<b,$ be reals.
+	\begin{enumerate}
+		\item The Riemann integral of $\int_a^b f(x)dx$ exists if and only if the subset of $[a,b]$ where $f$ is not continuous has Lebesgue measure zero
+		\item If  the Riemann integral of $\int_a^b f(x)dx$ exists then $f$ is Borel measurable (in particular, the Lebesgue integral $\int_a^b f(x)d\mathcal{L}(x) x$ exists ) and the integrals are the same.
+	\end{enumerate} 
+\end{theorem}
+  
+\begin{definition}
+	Given a property, if the set of reals that fail to have is a set with Lebesgue measure zero, we say that the property \textbf{holds almost aeverywhere}. 
+\end{definition}
+ 
+As the Riemann and Lebesgue integrals agree (when the Riemann integral exists), we will use simply the term \textit{integral} to refer to either, and abuse the notation when no confuse arises.
+$\int_a^b f(x) dx $ will denote the Lebesgue integral (instead of $\int_{[a,b]}f(x) \mathcal{L}x$)
+We will also write $\int_A f(x) dx $, when $A$ is not an interval.
+
+
+\subsection{Convergence of integrals}
+ 
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}
+
+\
+
+
+\begin{center}		
+For he strove in battles dire 
+
+In unseen conflictions with shapes 
+
+Bred from his forsaken wilderness. 
+
+Of beast, bird, fish, serpent \& element 
+
+Combustion, blast, vapour and cloud 
+
+In infinite realms, areas unfold
+
+Riemann's wings, summation told
+
+Limits converge, precision's sway
+
+Integration's dance, the mathematic way
+
+Strong Law's grasp, a siren's call
+
+Independent trials, destined to enthrall
+
+\end{center}
+
+
+\
+
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}	
+	
+\	
+
+\begin{definition}
+	Let $X_1, X_2,...$ and be a sequence of random variables and $X$ be a random variable, all defined on the same probability space $(\Omega, \mathcal{F}, \Pp)$.
+	We say that $X_1,X_2,...$ \textbf{converges to $X$ almost surely } and write $$\lim_{n \to \infty} X_n= X \quad \quad \textrm{almost surely} $$ if $$\Pp(\{ \omega \in \Omega \mid \lim_{n\to \infty }X_n(\omega)= X \})=1$$
+Equivalently $$\Pp(\{ \omega \in \Omega \mid \lim_{n\to \infty }X_n(\omega) \neq  X \})=0$$
+\end{definition}
+
+A famous and important example is the \textbf{Strong Law of Large Numbers}.
+
+\begin{definition}
+	Let $f_1, f_2,...$ and be a sequence of real Borel-measurable functions and $f$ be another such function
+	We say that $f_1,f_2,...$ \textbf{converges to $f$ almost everywhere } and write $$\lim_{n \to \infty} f_n= f \quad \quad \textrm{almost everywhere} $$ if  the set  $$\{ x \in \Rr \mid \lim_{n\to \infty }f_n(x) \neq  f(x) \}$$ has Lebesgue measure zero.
+\end{definition}
+
+\begin{theorem}[Monotone convergence]
+	Let $X_1,X_2,...$ be a sequence of random variables convering almost surely to a random variable $X$. If $$0 \leq X_1 \leq X_2 \leq  \quad \quad \textrm{almost surely}$$
+	then $$\lim_{n\to \infty} \Ee X_n = \Ee X. $$
+	Let $f_1,f_2,...$ be a sequence of Borel-measurable functions on $\Rr$ converging almost everywhere to a function $f$. If $$0 \leq f_1 \leq f_2 \leq  \quad \quad \textrm{almost everywhere}$$
+	then $$\lim_{n\to \infty}  \int_{-\infty}^{\infty} f_n(x)dx = \int_{-\infty}^{\infty} f(x)dx. $$
+	
+\end{theorem}
+
+
+\begin{theorem}
+	Let $X$ be a nonnegative random variable that takes countably many values $x_1,x_2,....$ Then $$\Ee X= \sum_{k=1}^{\infty}x_k \Pp({X=x_k})	 $$ 
+\end{theorem}
+ 
+
+\begin{theorem}
+	[Dominated Convergence]. Let $X_1,X_2,...$ be a sequence of random variables convering almost surely to a random variable $X$. If there is a random variable $Y$ such that $\Ee Y < \infty $ and $|X_n|\leq Y$ almost surely for every $n$, then 
+	  $$\lim_{n\to \infty} \Ee X_n = \Ee X. $$
+	 
+	Let $f_1,f_2,...$ be a sequence of Borel-measurable functions on $\Rr$ converging almost everywhere to a function $f$. If there is a function $g$ such that $$\int_{-\infty}^\infty g(x)dx < \infty $$ and $|f_n|<g$ almost everywhere for every $n$, then 
+	 $$\lim_{n\to \infty}  \int_{-\infty}^{\infty} f_n(x)dx = \int_{-\infty}^{\infty} f(x)dx. $$
+		
+\end{theorem}
+ 
+\subsection{Computation of Expectations}
+
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}
+
+
+
+\
+	 
+\begin{center}
+Dark revolving in silent activity: \\
+Unseen in tormenting passions; \\
+An activity unknown and horrible; \\
+A self-contemplating shadow, \\
+In enormous labours occupied
+\end{center}
+
+\
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}	
+	
+\	
+
+Let $X$ be a random variable on a probability space ($\Omega, \mathcal{F}, \Pp$). We have defined the expectation of $X$ to be the (Lebesgue) integral:
+$$\Ee X = \int_\Omega X(\omega)d \Pp (\omega), $$ naturally, this approch highlights the linearity of expectation and has a certain intuitive appel. 
+But working on general abstract spaces is quite cancerous. So we will see a few theorems to relate a general $\Omega$ to $\Rr.$
+
+\begin{theorem}
+	Let $X$ be a random variable on a probability space $(\Omega, \mathcal{F}, \Pp)$ and let $g$ be a Borel-measurable function on $\Rr$. Then $$\Ee |g(X)|= \int_\Rr |g(x)|d \mu_X(x) $$ and if $\Ee |g(X)|< \infty $ then 
+$$\Ee g(X)= \int_\Rr g(x)d \mu_X(x) $$
+
+Let $X$ be a random variable on a probability space $(\Omega, \mathcal{F}, \Pp)$ and
+let $g$ be a real Borel-measurable. Suppose that $X$ has a density $f,$ that is, $f$ is a nonnegative Borel-measurable function such that for every $B$ Borel subset of $\Rr$
+$$\mu_X (B)= \int_B f(x)dx $$
+Then $$\Ee |g(X)|= \int_{-\infty}^{\infty} |g(x)|f(x)dx $$ and if  $\Ee |g(X)|< \infty $ then 
+$$\Ee g(X)=  \int_{-\infty}^{\infty} g(x)f(x)dx  $$
+\end{theorem}
+ 
+
+
+
+\subsection{Change of Measure} 
+ 
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}
+
+\
+
+\begin{center}		
+But Eternals beheld his vast forests. \\
+Age on ages he lay, clos'd, unknown, \\
+Brooding shut in the deep; all avoid \\
+The petrific abominable chaos
+\end{center}
+
+
+\
+
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}
+
+\begin{theorem}
+	Let $(\Omega, \mathcal{F}, \Pp)$ be a probability space and let $Z$ be an almost surely nonnegative random variable with $\Ee Z= 1$ For $A \in \mathcal{F}$ define $$\tilde{\Pp}(A)= \int_A Z(\omega)d \Pp(\omega). $$
+Then $\tilde{\Pp}$ is a probability measure and if $X$ is a nonnegative random variable $$\tilde{E}X:= \int_\Omega X (\omega)d \tilde{\Pp}(\omega) = E[XZ] $$ If $Z$ is also surely (strictly positive), then $$\Ee Y = \tilde{E}\Bigg[\frac{Y}{Z}\Bigg]$$
+for every nonnegative random variable $Y$.
+\end{theorem}
+
+
+ 
+
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}
+
+\
+
+\begin{center}		
+His cold horrors silent, dark Urizen \\
+Prepar'd; his ten thousands of thunders \\
+Rang'd in gloom'd array stretch out across \\
+The dread world. \& the rolling of wheels \\
+As of swelling seas, sound in his clouds \\
+In his hills of stor'd snows, in his mountains \\
+Of hail \& ice; voices of terror, \\
+Are heard, like thunders of autumn, \\
+When the cloud blazes over the harvests
+\end{center}
+
+\
+
+\begin{center}
+	\par\noindent\rule{200pt}{0.1pt}
+\end{center}
+
+
+\end{document} 
