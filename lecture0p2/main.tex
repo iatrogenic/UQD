@@ -1,0 +1,661 @@
+\documentclass[reqno,a4paper,12pt]{amsart}%{article}%
+
+\usepackage{amssymb,amsmath,amscd,amstext,amsthm,amsfonts}
+\usepackage[]{graphicx}
+\usepackage{epstopdf}
+\usepackage{setspace} 
+\usepackage{subfig}
+\usepackage{color}
+\usepackage[mathscr]{eucal}
+\usepackage[draft]{changes}
+%\doublespacing
+\usepackage[ansinew]{inputenc} 
+\usepackage{hyperref}
+\usepackage{color}
+%\usepackage{standalone}
+\usepackage{hyperref}
+\usepackage{subfiles}
+
+\usepackage{quoting}
+
+%\usepackage{mathtools}
+\usepackage{nicefrac}
+%\usepackage{xfrac}
+\usepackage{physics}
+\usepackage{enumerate}
+\usepackage{bbm}
+
+\usepackage{epigraph} 
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont \bfseries}{\thesection.}{1em}{}
+
+%\usepackage[pagebackref]{hyperref}
+%\renewcommand*{\backref}[1]{Cited at page [#1]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\addtolength{\evensidemargin}{-15mm}
+%\addtolength{\oddsidemargin}{-15mm}
+%\addtolength{\textwidth}{30mm}
+%\addtolength{\textheight}{20mm}
+%\addtolength{\topmargin}{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\numberwithin{equation}{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{thm}{Theorem}[section]
+%\newtheorem{lem}[thm]{Lemma}%[section]
+%\newtheorem{prop}[thm]{Proposition}%[section]
+%\newtheorem{cor}[thm]{Corollary}%[section]
+%%\newtheorem{Jac}{Jacobi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{estimate}[theorem]{Estimate}
+%\newtheorem{assumption}[theorem]{Assumption}
+%{\theoremstyle{definition}%{plain}
+	%{%\theorembodyfont{\normalfont\rmfamily}
+		%%\newthbeorem{definition}[theorem]{Definition}
+		%\newtheorem{remark}[theorem]{Remark}
+		%\newtheorem{example}[theorem]{Example}
+		%\newtheorem{exercise}[section]{Exercise}
+		%\newtheorem{defn}[theorem]{Definition}
+		%}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}{Example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newcommand{\cal}{\mathcal}
+
+%\newcommand{\A}{{\cal A}}
+%\newcommand{\BB}{{\cal B}}
+%\newcommand{\CC}{{\cal C}}
+%\newcommand{\CCC}{{\cal C}}
+%\newcommand{\DD}{{\cal D}}
+%\newcommand{\EE}{{\cal E}}
+%\newcommand{\FF}{{\cal F}}
+%\newcommand{\GG}{{\cal G}}
+%\newcommand{\HH}{{\cal H}}
+%\newcommand{\II}{{\cal I}}
+%\newcommand{\JJ}{{\cal J}}
+%\newcommand{\KK}{{\cal K}}
+%\newcommand{\LL}{{\cal L}}
+%\newcommand{\MM}{{\cal M}}
+%\newcommand{\NN}{{\cal N}}
+%\newcommand{\OO}{{\cal O}}
+%\newcommand{\PP}{{\cal P}}
+%\newcommand{\QQ}{{\cal Q}}
+%\newcommand{\QQQ}{{\cal Q}}
+%\newcommand{\RR}{{\cal R}}
+%\newcommand{\SSS}{{\cal S}}
+%\newcommand{\TT}{{\cal T}}
+%\newcommand{\TTT}{{\cal T}}
+%\newcommand{\UU}{{\cal U}}
+%\newcommand{\VV}{{\cal V}}
+%\newcommand{\WW}{{\cal W}}
+%\newcommand{\XX}{{\cal X}}
+%\newcommand{\YY}{{\cal Y}}
+%\newcommand{\ZZ}{{\cal Z}}
+%\newcommand{\SRB}{\mathscr{E}}
+%\newcommand{\Mix}{{\rm Mix}}
+
+\newcommand{\fa}{{\mathfrak a}}
+\newcommand{\fg}{{\mathfrak g}}
+\newcommand{\fu}{{\mathfrak u}}
+\newcommand{\fD}{{\mathfrak D}}
+\newcommand{\fF}{{\mathfrak F}}
+\newcommand{\fG}{{\mathfrak G}}
+\newcommand{\fN}{{\mathfrak N}}
+\newcommand{\fR}{{\mathfrak R}}
+\newcommand{\fU}{{\mathfrak U}}
+\newcommand{\fX}{{\mathfrak X}}
+
+
+\newcommand{\Aa}{{\mathbb{A}}}
+\newcommand{\Bb}{{\mathbb{B}}}
+\newcommand{\Cc}{{\mathbb{C}}}
+\newcommand{\Dd}{{\mathbb{D}}}
+\newcommand{\Ee}{{\mathbb{E}}}
+\newcommand{\Ff}{{\mathbb{F}}}
+\newcommand{\Gg}{{\mathbb{G}}}
+\newcommand{\Hh}{{\mathbb{H}}}
+\newcommand{\Ii}{{\mathbb{I}}}
+\newcommand{\Jj}{{\mathbb{J}}}
+\newcommand{\Kk}{{\mathbb{K}}}
+\newcommand{\Ll}{{\mathbb{L}}}
+\newcommand{\Mm}{{\mathbb{M}}}
+\newcommand{\Nn}{{\mathbb{N}}}
+\newcommand{\Oo}{{\mathbb{O}}}
+\newcommand{\Pp}{{\mathbb{P}}}
+\newcommand{\Qq}{{\mathbb{Q}}}
+\newcommand{\Rr}{{\mathbb{R}}}
+\newcommand{\Ss}{{\mathbb{S}}}
+\newcommand{\Tt}{{\mathbb{T}}}
+\newcommand{\Uu}{{\mathbb{U}}}
+\newcommand{\Vv}{{\mathbb{V}}}
+\newcommand{\Ww}{{\mathbb{W}}}
+\newcommand{\Xx}{{\mathbb{X}}}
+\newcommand{\Yy}{{\mathbb{Y}}}
+\newcommand{\Zz}{{\mathbb{Z}}}
+
+
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+
+\DeclareMathOperator{\sint}{int}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\H{{\mathfrak H}}
+\def\Iso{\operatorname{Iso}}
+\def\e{\mathrm{e}}
+%\def\i{\mathrm{i}}
+\def\cc{\operatorname{cc}}
+\def\diag{\operatorname{diag}}
+\def\dist{\operatorname{dist}}
+\def\error{\operatorname{error}}
+%\def\id{\operatorname{id}}
+\def\j{\operatorname{j{}}}
+\def\C{\operatorname{C{}}}
+\def\G{\operatorname{G{}}}
+\def\L{\operatorname{L{}}}
+\def\Cov{\operatorname{Cov{}}}
+\def\M{\operatorname{M{}}}
+\def\Mat{\operatorname{Mat}}
+\def\GL{\operatorname{GL}}
+\def\Op{\operatorname{Op}}
+\def\sOp{\widetilde{\operatorname{Op}}}
+\def\PGL{\operatorname{PGL}}
+\def\Res{\operatorname{Res}}
+\def\Sp{\operatorname{Sp}}
+\def\Sw{{\mathcal S}}
+\def\SL{\operatorname{SL}}
+\def\sl{\operatorname{sl}}
+\def\SO{\operatorname{SO}}
+\def\PSL{\operatorname{PSL}}
+\def\O{\operatorname{O{}}}
+\def\T{\operatorname{T{}}}
+\def\tr{\operatorname{tr}}
+\def\sgn{\operatorname{sgn}}
+\def\supp{\operatorname{supp}}
+\def\meas{\operatorname{meas}}
+\def\Leb{\operatorname{Leb}}
+\def\Var{\operatorname{Var}}
+\def\Vol{\operatorname{Vol}}
+\def\Area{\operatorname{Area}}
+\def\ord{\operatorname{ord}}
+\def\Prob{\operatorname{Prob}}
+\def\Ad{\operatorname{Ad}}
+\def\ad{\operatorname{ad}}
+
+\def\Per{\operatorname{Per}}
+
+\def\GamG{\Gamma\backslash G}
+\def\SLZ{\SL(2,\Zz)}
+\def\SLR{\SL_2(\Rr)}
+\def\SLC{\SL_2(\Cc)}
+\def\SOR{\SO(2)}
+
+\def\Re{\operatorname{Re}}
+\def\Im{\operatorname{Im}}
+
+%%%%% Pedro's Macro
+\newcommand{\Mod}[1]{\left\vert{#1}\right\vert}
+\newcommand{\dem}{ \par\medbreak\noindent{\bf
+		Proof. }\enspace} 
+\newcommand{\cqd}{\hfill
+	$\sqcup\!\!\!\!\sqcap\bigskip$}
+\newcommand{\nrm}[1]{\left\|#1\right\|}
+
+
+%\def\trans{\,^\top\!}
+
+%\DeclareMathOperator{\GL}{GL}
+%\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\vspan}{span}
+
+\newcommand {\CC}{\mathbb{C}}
+\newcommand {\RR}{\mathbb{R}}
+\newcommand {\FF}{\mathbb{F}}
+\newcommand {\NN}{\mathbb{N}}
+\newcommand {\QQ}{\mathbb{Q}}
+\newcommand {\EE}{\mathbb{E}}
+\newcommand {\PP}{\mathbb{P}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand{\abs}[1]{\left| #1\right|}
+%\newcommand{\norm}[1]{\left\| #1\right\|}
+%\newcommand{\pde}[2]{\frac{\partial #1}{\partial #2}}
+
+%\newcommand{\spec}[1]{\operatorname{spec}\left( #1\right)}
+%\newcommand{\tr} {\operatorname{tr}}
+%\newcommand{\diag} {\operatorname{diag}}
+\newcommand{\trans} {\,^\top\!}
+\newcommand{\conj} {\overline}
+\newcommand{\para} {\parallel}
+
+\newcommand{\id}  {\operatorname{id}}
+\newcommand{\im}  {\operatorname{Im}}
+\newcommand{\re}  {\operatorname{Re}}
+%\newcommand{\up}  {\uparrow}
+%\newcommand{\down}{\downarrow}
+%\newcommand{\sgn} {\operatorname{sgn}}
+%\newcommand{\const}{\operatorname{cst}}
+
+\newcommand{\Int} {\operatorname{int}}
+%\newcommand{\Ext} {\operatorname{Ext}}
+%\newcommand{\Span}{\operatorname{span}}
+%\newcommand{\perm}{\operatorname{Perm}}
+%\newcommand{\std} {\operatorname{std}}
+%\newcommand{\fix} {\operatorname{Fix}}
+%\newcommand{\cl}  {\operatorname{ cl}}
+
+\newcommand{\rot}{\operatorname{rot}}
+\newcommand{\Homeo}{\operatorname{Homeo}} %{\mbox{\rm Homeo\,}}
+\newcommand{\Diff} {\operatorname{Diff}}  %{\mbox{\rm Diff\,}}
+\newcommand{\vf}   {\operatorname{Vect}} % {\XX}
+%\newcommand{\diffo}{\text{Diff}_0\,}
+%\newcommand{\vol}  {\operatorname{Diff}_{\text{vol}}\,}
+%\newcommand{\Vol}  {\operatorname{vol}}
+\newcommand{\Symp} {\operatorname{Symp}}
+%\newcommand{\sympo}{\mbox{\rm Symp_0\,}} % {\text{Symp}_0\,}
+\newcommand{\Ham}  {\operatorname{Ham}}
+\newcommand{\Sym} {\operatorname{Sym}}
+\newcommand{\Skew} {\operatorname{Skew}}
+%\newcommand{\Sp}   {\operatorname{Sp}}
+%\newcommand{\lie}  {\mbox{\rm Lie\,}}
+
+%\newcommand{\GL}   {\operatorname{GL}}
+%\newcommand{\SL}   {\operatorname{SL}}
+%%\newcommand{\SU}   {\operatorname{SU}}
+%\newcommand{\SO}   {\operatorname{SO}}
+
+\newcommand{\DC}   {\operatorname{DC}}
+\newcommand{\LC}   {\operatorname{LC}}
+
+\newcommand{\te}[1]{\quad\text{#1}\quad}
+%\newcommand{\comment}[1]{}
+
+\newcommand{\Teich}{\mathscr{T}}
+\newcommand{\TTeich}{{\rm T}\mathscr{T}}
+\newcommand{\Bundle}{\mathscr{B}}
+\newcommand{\Afrk}{\mathfrak{A}}
+\newcommand{\Bfrk}{\mathfrak{B}}
+\newcommand{\Cfrk}{\mathfrak{C}}
+\newcommand{\Dfrk}{\mathfrak{D}}
+\newcommand{\Ffrk}{\mathfrak{F}}
+\newcommand{\Hfrk}{\mathfrak{H}}
+\newcommand{\Lfrk}{\mathfrak{L}}
+\newcommand{\Ofrk}{\mathfrak{O}}
+\newcommand{\Qfrk}{\mathfrak{Q}}
+\newcommand{\Rfrk}{\mathfrak{R}}
+\newcommand{\Tfrk}{\mathfrak{T}}
+\newcommand{\Ufrk}{\mathfrak{U}}
+\newcommand{\Ascr}{\mathscr{A}}
+\newcommand{\Bscr}{\mathscr{B}}
+\newcommand{\Cscr}{\mathscr{C}}
+\newcommand{\Escr}{\mathscr{E}}
+\newcommand{\Zscr}{\mathscr{Z}}
+\newcommand{\Gscr}{\mathscr{G}}
+\newcommand{\Nscr}{\mathscr{N}}
+\newcommand{\Mscr}{\mathscr{M}}
+\newcommand{\Kscr}{\mathscr{K}}
+\newcommand{\Iscr}{\mathscr{I}}
+\newcommand{\Jscr}{\mathscr{J}}
+\newcommand{\Dscr}{\mathscr{D}}
+\newcommand{\Fscr}{\mathscr{F}}
+\newcommand{\Hscr}{\mathscr{H}}
+\newcommand{\Lscr}{\mathscr{L}}
+\newcommand{\Oscr}{\mathscr{O}}
+\newcommand{\Qscr}{\mathscr{Q}}
+\newcommand{\Pscr}{\mathscr{P}}
+\newcommand{\Rscr}{\mathscr{R}}
+\newcommand{\Sscr}{\mathscr{S}}
+\newcommand{\Tscr}{\mathscr{T}}
+\newcommand{\Uscr}{\mathscr{U}}
+\newcommand{\Vscr}{\mathscr{V}}
+\newcommand{\Wscr}{\mathscr{W}}
+\newcommand{\Xscr}{\mathscr{X}}
+\newcommand{\Grp}{{\rm G}}
+\newcommand{\Grass}{\mathscr{G}}
+\newcommand{\Sperm}{{\rm S}}
+\newcommand{\SJ}{{\rm S}^{sp}}
+\newcommand{\Flag}{\Fscr}
+\newcommand{\Fliso}{\Fscr^{sp}}
+\newcommand{\Grptil}{\widetilde{\rm G}}
+\newcommand{\Vfrk}{\mathfrak{V}}
+\newcommand{\Xfrk}{\mathfrak{X}}
+\newcommand{\Gfrk}{\mathfrak{G}}
+\newcommand{\Pfrk}{\mathfrak{P}}
+\newcommand{\Mfrk}{\mathfrak{M}}
+\newcommand{\Ical}{\mathcal{I}}
+\newcommand{\Grad}{{\rm Grad}}
+\newcommand{\Sone}{[0,1]}
+
+\newcommand{\emb}[1]{\BB^{#1}}
+
+\newcommand{\ff}{\mathbb{II}}
+
+\usepackage[normalem]{ulem}
+
+\begin{document}
+	\title[An Aberration in the Heartland of the Real]{$\S$ Lecture  0 / Part 2 $\S$\\
+	\Large An Aberration in the Heartland of the Real  \\
+	\small or Information, Independence, \& Conditioning
+	}
+	\author[Underground Research Division]{\texttt{Underground Research Division}
+	\\ 
+	\texttt{\xout{DO NOT} DISTRIBUTE THIS DOCUMENT WITHOUT PERMISSION }}
+	\date{August 2, 1999}
+	\maketitle
+	
+		\begin{center}
+		\includegraphics[width=8cm, height=8cm]{cover.png}
+		\end{center}
+	\pagenumbering{gobble}
+	\pagebreak
+	\pagenumbering{arabic}
+	\section*{Previously on URD}
+		\epigraph{``She, in her own way, goes on a kind of strike. She doesn't give up her knowledge. She unmasks, however, the master’s function."}
+
+	Gentlemen! We find ourselves in an important epoch, in a fermentation, in which Spirit has made a leap forward, has gone beyond its previous concrete form and acquired a new one. The whole mass of ideas and concepts that have been current until now, the very bonds of the world, are dissolved and collapsing into themselves like a vision in a dream. A new emergence of Spirit is at hand; the URD must be the first to recognize it, while others, resisting impotently, adhere to the past, and the majority unconsciously constitute the matter in which it makes its appearance.
+
+	Our first meeting laid the foundation for the very language with which the object of our Desire is made apprehensible. We are not yet done with such generalities, for one fundamental construction of probability theory remains absent: \textit{the conditional expectation}. 
+	\pagebreak
+	\section{Information \& Time}
+
+\epigraph{``Not only do we fail in our pursuit of happiness, we even fail in our pursuit of unhappiness, our attempts to ruin our life produce small unexpected bits of miserable happiness, of surplus-enjoyment."}
+
+\begin{definition}
+	Fix $T > 0$. A \textbf{filtration} is a family of $\sigma$-algebras $\{ \mathcal{F}_t \}_{t \in [0,T]}$ such that
+	\[
+	t \leq s \implies \mathcal{F}_t \subseteq \mathcal{F}_s.
+	\]
+\end{definition}
+
+\begin{definition}
+	Let $X$ be a random variable. The \textbf{$\sigma$-algebra generated by $X$} is defined by
+	\[
+	\sigma(X) = \{ X^{-1}(B) : B \in \mathcal{B}(\RR) \}.
+	\]
+\end{definition}
+\begin{remark}
+	Proving $\sigma (X)$ is indeed a $\sigma$-algebra is a good exercise.
+\end{remark}
+\begin{definition}
+	Let $X : \Omega \to \RR$ be a random variable and $\mathcal{G}$ be a $\sigma$-algebra over $\Omega$. We say that $X$ is \textbf{$\mathcal{G}$-measurable} if $\mathcal{G} \subseteq \sigma(X)$. Equivalently,
+		\[
+		X^{-1}(B) = \{ X \in B \} \in \mathcal{G}
+		\]
+		for every $B \in \mathcal{B}(\RR)$.
+\end{definition}
+
+\begin{definition}
+	A \textbf{stochastic process} is a family of random variables $\{ X_t \}_{t \in I}$ defined on the same probability space and indexed by a set $I$.
+\end{definition}
+
+\begin{remark}
+		Here we take $I = [0, T]$. One can consider continuous and discrete stochastic processes separately. 
+\end{remark}
+\begin{definition}
+	Let $(\Omega, \mathcal{F}, \PP)$ be a probability space and $\{\mathcal{F}_t\}_{t \in [0,T]}$ be a filtration contained in $\mathcal{F}$. We call the quadruple $(\Omega, \mathcal{F}, \PP, \{\mathcal{F}_t\}_{t \in [0,T]} )$ a \textbf{filtered probability space}.
+\end{definition}
+
+\begin{definition}
+	Let $(\Omega, \mathcal{F}, \PP, \{\mathcal{F}_t\}_{t \in [0,T]} )$ be a filtered probability space and $X = \{X_t\}$ be a stochastic process. We say that $X$ is \textbf{adapted} to $\{\mathcal{F}_t \}$ if each $X_t$ is $\mathcal{F}_t$-measurable for every $t \in [0,T]$.
+\end{definition}
+\mbox{}
+\vfill
+\pagebreak
+
+	Heat.
+	
+	Heat. This is what cities mean to me. You get off the train and walk out of the station and you are hit with the full blast. The heat of air, traffic and people. The heat of food and sex. The heat of tall buildings. The heat that flows out of the subways and tunnels. It's always fifteen degrees hotter in the cities. Heat rises from the sidewalks and falls from the poisoned sky. The buses breathe heat. Heat emanates from crowds of shoppers and office workers, the entire infrastructure is based on heat, desperately uses up heat, breeds more heat. The eventual heat death of the universe that scientists love to talk about is already well underway and you can feel it happening all around you in any large or medium-sized city. Heat and wetness.
+
+\mbox{}
+\vfill
+
+[...] hysteria isn’t so much a character trait as change in state, it is a reactive existential position, that wants an answer--- any answer, as long as it is an answer--- to a question that is constantly being ignored, and that question is: what am I to you?
+
+
+\pagebreak
+
+
+\section{Independence}
+
+\epigraph{``All sorts of things in this world behave like mirrors."}{}
+
+\begin{definition}
+	Let $(\Omega, \mathcal{F}, \PP)$ be a probability space, $\mathcal{G}_1, \mathcal{G}_2, \ldots$ sub-$\sigma$-algebras of $\mathcal{F}$ and $X_1, X_2, \ldots$ be random variables on this space.
+	
+	\begin{itemize}
+		\item We say that $\mathcal{G}_1, \ldots, \mathcal{G}_n$ are independent if 
+		\[
+		\PP \left( \bigcap_{i = 1}^n A_i \right) = \prod_{i =1}^n \PP(A_i)
+		\]
+		for every $A_1 \in \mathcal{G}_1, \ldots, A_n \in \mathcal{G}_n$.
+		
+		\item The variables $X_1, \ldots, X_n$ are independent if $\sigma(X_1), \ldots, \sigma (X_n)$ are independent.
+		
+		\item The whole sequence $\mathcal{G}_1, \mathcal{G}_2, \ldots$ is independent if $\mathcal{G}_1, \ldots, \mathcal{G}_n$ are independent for every $n$.
+		
+		\item The whole sequence of random variables $X_1, X_2, \ldots$ is independent if $X_1, \ldots, X_n$ are independent for every $n$.
+	\end{itemize}
+	
+\end{definition}
+
+\begin{theorem}
+	If $X$ and $Y$ are independent random variables and $f, g : \RR \to \RR$ are Borel functions, then $f(X)$ and $g(Y)$ are independent random variables. 
+\end{theorem}
+
+\begin{definition}
+	Let $X$ and $Y$ be random variables. 
+	\begin{itemize}
+		\item 	The \textbf{joint distribution measure} of $(X,Y)$ is given by
+		\[
+		\mu_{X, Y} (C) = \PP \{ (X,Y) \in C\} = \PP \{ \omega \in \Omega : (X(\omega), Y(\omega)) \in C \}
+		\]
+		\item The \textbf{joint cumulative function} of $(X,Y)$ is
+		\[
+		F_{X,Y} (a,b) = \mu_{X,Y} ((- \infty, a] \times (- \infty, b])
+		\]
+		\item The function $f_{X,Y} : \RR^2 \to [0,\infty)$ is a \textbf{joint density} for $(X,Y)$ if
+		\[
+		\mu_{X, Y} (C) = \int_{\RR^2}  \mathbbm{1}_C (x,y) f_{X,Y}(x,y) \, d(x,y)
+		\]
+		for every $C \in \mathcal{B}(\RR^2)$.
+	\end{itemize}
+\end{definition}
+
+\begin{remark}
+	The Borel $\sigma$-algebra $\mathcal{B}(\RR^2)$ is generated by the closed rectangles.
+\end{remark}
+
+\begin{theorem}
+	Let $X$ and $Y$ be random variables. The following are equivalent
+	\begin{enumerate}
+		\item $X$ and $Y$ are independent.
+		\item For all $A, B \in \mathcal{B}(\RR)$
+		\[
+		\mu_{X, Y} (A \times B) = \mu_X (A) \mu_Y (B)
+		 \]
+		 \item For all $a,b \in \RR$
+		 \[
+		 F_{X,Y} (a,b) = F_X (a) F_Y (b).
+		 \]
+		 \item For all $u,v \in \RR$ (and assuming the expectations are finite)
+		 \[
+		 \EE e^{uX + vY} = \EE e^{uX} + \EE e^{vY}.
+		 \]
+		 \item Assuming the existence of a joint density, for every $x,y \in \RR$
+		 \[
+		 f_{X,Y} (x,y) = f_X(x) f_Y(y).
+		 \]
+	\end{enumerate}
+\end{theorem}
+
+	\begin{proposition}
+	If $X$ and $Y$ are independent and $\EE \abs{X Y} < \infty$ then
+	\[
+	\EE(XY) = \EE X \cdot \EE Y.
+	\]
+\end{proposition}
+
+\begin{definition}
+	Let $X$ be a random variable whose expectation is defined. 
+	\begin{itemize}
+	\item 	The \textbf{variance} of $X$ is
+	\[
+	\Var(X) = \EE [ (X- \EE X)^2 ] = \EE [X^2] - (\EE X)^2.
+	\]
+	\item If $Y$ is another random variable and $\EE X, \Var(X), \EE Y$ and $\Var(Y)$ are all finite. We define the \textbf{covariance} between $X$ and $Y$ to be
+	\[
+	\Cov(X,Y) = \EE [ (X-\EE X)(Y - \EE Y)] = \EE [X Y] - \EE X \cdot \EE Y.
+	\]
+	\item  If $\Var(X), \Var(Y) > 0$ then the \textbf{correlation coefficient} of $X$ and $Y$ is
+	\[
+	\rho(X,Y) = \frac{\Cov(X,Y)}{\sqrt{\Var (X) \Var(Y)}}.
+	\]
+	If $\rho(X,Y) = 0$ then $X$ and $Y$ are said to be \textbf{uncorrelated}.
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	The random variables $X_1, \ldots, X_n$ are said to be \textbf{jointly normal} if the random column vector $\mathbf{X} = (X_1, \ldots, X_n)^t$ has joint density given by
+	\[
+	F_\mathbf{X} ( \mathbf{x}) = \frac{1}{\sqrt{(2 \pi)^n \det(C)}} \exp \left( - \frac{1}{2} (\mathbf x - \mu) C^{-1}(\mathbf x - \mu)^t \right)
+	\]
+	where
+	\begin{itemize}
+		\item $\mathbf x = (x_1, \ldots, x_n)$,
+		\item $\mu = (\EE X_1, \ldots, \EE X_n)$,
+		\item $C$ is the positive definite matrix of covariances.
+	\end{itemize}
+\end{definition}
+\mbox{}
+\vfill
+\pagebreak
+
+In Penelope’s own dreams her latent wish manifests, and it is for the destruction of Odysseus’s desires— of Agamemnon’s desires. But not only can she not act on these desires, she cannot even have them even in her dreams, they are taken from her, as the eagle, Odysseus, Agamemnon and we omnipotently declare her wish to be their opposite. Penelope does not get to have a story of her own. She is a tool for the satisfaction of others.
+
+\mbox{}
+\vfill
+
+[...] but once again I didn’t do anything, didn’t say anything, and let events run their course, while I essentially placed no trust in this return to Paris: like all cities, Paris was made to generate loneliness, and we hadn’t had enough time together, in that house, a man and a woman alone and facing one another; for a few months we had been the rest of each other’s world, but would we be able to sustain such a thing? I don’t know; I’m old now and can’t really remember, but I think I was already afraid, and I’d understood, even then, that society was a machine for destroying love.
+
+\pagebreak
+
+\section{Conditional Expectation}
+
+\epigraph{``I love you, but, because inexplicably, I love in you something more than you — the objet petit \textit{a} — I mutilate you."}
+
+\begin{theorem}
+	Let $(\Omega, \mathcal{F}, \PP)$ be a probability space, $X$ a random variable with $\EE\abs{X} < \infty$ and $\mathcal{G}$ a sub-$\sigma$-algebra of $\mathcal{F}$. There exists a random variable $Y$ such that
+	\begin{itemize}
+		\item $Y$ is $\mathcal{G}$-measurable,
+		\item $\EE \abs{Y} < \infty$,
+		\item for every $G \in \mathcal{G}$ we have
+		\[
+		\int_G Y \, d\PP = \int_G X \, d\PP .
+		\]
+		This random variable $Y$ is denoted $\EE [X \mid \mathcal{G}]$ and is a \textbf{version of the conditional expectation} of $X$ given $\mathcal{G}$. If $W$ is another random variable and $\mathcal{G} = \sigma(W)$ then we write $\EE [X \mid \mathcal{G}] = \EE[X \mid W]$.
+	\end{itemize}
+\end{theorem}
+
+\begin{remark}
+	The random variable $Y$ above is not necessarily unique. What we do have is that any other random variable $Z$ with the same properties is agrees with $Y$ almost surely, i.e. $\PP(Y = Z) = 1$. 
+\end{remark}
+
+\begin{theorem}
+	Let $(\Omega, \mathcal{F}, \PP)$ be a probability space and $\mathcal{G}$ be a sub-$\sigma$-algebra of $\mathcal{F}$. Suppose $X$ and $Y$ are integrable random variables.
+	\begin{enumerate}
+		\item If $c_1, c_2 \in \RR$, then
+		\[
+		\EE [c_1 X + c_2 Y \mid \mathcal{G}] = c_1 \EE [X \mid \mathcal{G}] + c_2 \EE [Y \mid \mathcal{G} ],
+		\]
+		\item If $XY$ is integrable and $G$ is $\mathcal{G}$-measurable, then
+		\[
+		\EE [XY \mid \mathcal G] = X \EE [Y \mid \mathcal G]
+		\]
+		\item If $\mathcal{H}$ is a sub-$\sigma$-algebra of $\mathcal G$ then
+		\[
+		\EE [ \EE [X \mid \mathcal G] \mid \mathcal{H} ] = \EE [X \mid \mathcal{H}].
+		\]
+		\item If $\phi$ is a convex function then
+		\[
+		\EE [ \varphi(X) \mid \mathcal{G}] \geq \varphi (\EE [ X \mid \mathcal{G}])
+		\]
+	\end{enumerate}
+\end{theorem}
+
+\begin{lemma}
+	Let $(\Omega, \mathcal{F}, \PP)$ be a probability space and $\mathcal{G}$ be a sub-$\sigma$-algebra of $\mathcal{F}$. Suppose the random variables $X_1, \ldots, X_K$ are $\mathcal{G}$-measurable and the random variables $Y_1, \ldots, Y_L$ are independent of $\mathcal{G}$. Let $f : \RR^{K+L} \to \RR$ be a function and define $g : \RR^K \to \RR$ by
+	\[
+	g(x_1, \ldots, x_K) = \EE [f(x_1, \ldots, x_K, Y_1, \ldots, Y_L)].
+	\]
+	Then
+	\[
+	\EE [ f(X_1, \ldots, X_K, Y_1, \ldots, Y_L) \mid \mathcal{G}] = g(X_1, \ldots, X_K).
+	\]
+\end{lemma}
+
+\begin{definition}
+	Let $T>0$ and $(\Omega, \mathcal{F}, \PP, \{ \mathcal{F}_{t \in [0,T]} \})$ be a filtered probability space. Suppose $M = \{M_t \}$ is a stochastic process adapted to the given filtration.
+	\begin{itemize}
+		\item  The process $M$ is a \textbf{martingale} if for all $0 \leq s \leq t \leq T$
+		\[
+		\EE [M_t \mid \mathcal{F}_s] = M_s.
+		\]
+		\item The process $M$ is a \textbf{submartingale} if for all $0 \leq s \leq t \leq T$
+		\[
+		\EE[M_t \mid \mathcal{F}_s] \geq M_s.
+		\]
+		\item The process $M$ is a \textbf{supermartingale} if for all $0 \leq s \leq t \leq T$
+		\[
+		\EE[M_t \mid \mathcal{F}_s] \leq M_s.
+		\]
+	\end{itemize}
+	\end{definition}
+	
+	\begin{definition}
+		Let $T>0$ and $(\Omega, \mathcal{F}, \PP, \{ \mathcal{F}_{t \in [0,T]} \})$ be a filtered probability space. Consider an adapted process $X = \{X_t\}$. Assume for all $0 \leq s \leq t \leq T$ and that for every non-negative, Borel function $f$, there exists another Borel function $g$ such that 
+		\[
+		\EE [f(X_t) \mid \mathcal{F}_s] = g(X_s).
+		\]
+		Then $X$ is a \textbf{Markov process}.
+	\end{definition}
+\mbox{}
+\vfill
+\pagebreak
+Streep is the devil, not because she’s evil and certainly not because she’s powerful but because she knows.  She tells the truth.  Streep is part of the fashion media, but she doesn't bother to recite the standard lines of the fashion media.  Streep doesn't tell her that it's a woman's right to look amazing.  She doesn't say there should be no guilt in spending money on expensive clothes.  She doesn't tell her that fashion empowers women.  She doesn't need to lie.  She's not trying to convince her it's ok to want fashion; the truth is, it doesn't matter what you want.  Do you think the devil wears Prada because it \textit{wants} to wear Prada, do you think that matters?  Like it or not--- you never had a choice.  \textit{You may as well enjoy it.}  
+
+\mbox{}
+\vfill
+
+Did Freud say that “all is but a dream”? Certainly he entered psychoanalysis via the dream, the royal road of the dream, but apparently by saying: sometimes you dream, and sometimes you don’t. What Lacan deciphered was: it’s the generalization of the dream, that is, one is always dreaming. This means that the pleasure principle doesn’t stand in opposition to the reality principle. The pleasure principle is not mere dreaming with the reality principle as the wake-up. It’s that the dream is there night and day. There is no binarism of dream and not-dream. If we are in teaching, from time to time, we know that Lacan did indeed formulate that in his last teaching: one only wakes up so as to go on dreaming. It’s rather in the dream that one stands a chance of encountering the real. We call that a nightmare, and precisely the nightmare casts you into reality so that you might forget the real encountered in the dream and go on dreaming with your eyes wide open. The waking state is merely the pursuit of the dream by other means.
+
+\pagebreak
+
+\section*{Postscript}
+\epigraph{``The self is an other."}{}
+
+Gentlemen! Just as we are about to reach the Meat \& Potatoes of our studies, we are led to take an extended pause --- \textit{coitus interruptus}. Holiday season is upon us, and many will be on break. Yet this delineation comes at the right time; we are done with the mathematical preliminaries and the coming chapter rightfully demands our careful study. You are encouraged to begin metabolizing it as soon as possible, or catch up on any of the material covered thus far. In September we have much to do, much to read, much to drink and laugh. For in this Demiurge controlled hellhole some still call \textit{world}, the Other is both our solace and disgrace. Feel free to spread the good word. We wish you the best and hope to see you soon.
+\vfill
+\hfill --- Underground Research Division
+
+
+\end{document} 
